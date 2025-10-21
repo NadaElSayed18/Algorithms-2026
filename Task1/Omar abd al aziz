@@ -1,0 +1,17 @@
+def selection_sort(arr):
+    n=len(arr)  #بنشوف عدد العناصر
+    for i in range (n): #بعدي علي العناصر اشوف الاصغر
+        min= i#بفرض ان الصغير هو الاول
+        for j in range (i+1,n):#بشوف الباقي واعمل مقارنه
+            if arr [j]<arr[min]:
+                min =j#في حالة ان في عنصر اصغر بحذف مكانه
+        arr [i],arr[min]=arr[min],arr[i]#ببدل المكانه بتاعه مع التاني
+
+
+
+arr=[55,2,35,6,9,7]
+print('array befor selection sort =',arr)
+selection_sort(arr)
+print('array after sorting',arr)
+
+**Omar abd al aziz

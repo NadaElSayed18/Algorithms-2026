@@ -1,0 +1,46 @@
+
+
+           #  Mahmoud Sabry Abdo Mashaal
+
+def selection_sort(arr):
+    # (selection_sort)دي دالة اسمها  
+    #  (arr)بتاخد ليست اسمها 
+
+    n = len(arr)
+        # هنا بنحسب طول الليست يعني عدد العناصر فيها
+
+    for i in range(n - 1):
+        # بنمشي على الليست كلها ماعدا آخر عنصر
+        # لان اخر رقم هيكون خلاص خد مكانه
+
+        smallest_index = i
+        #بنفترضه في البدايه ان هو الرقم الاصغر
+
+        for j in range(i + 1, n):
+            # بندور علي اصغر رقم من بعد القيمه الاصغر السابقه 
+            # الافتراضيه في البدايه
+
+            if arr[j] < arr[smallest_index]:
+                # لو لقينا عنصر أصغر من اللي افترضناه الأصغر
+                smallest_index = j
+               #بنبدل العنصر ده مكانه
+
+        arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+        #بعد ما بنخلص اللفه بنبدل كل عنصر بالاصغر
+        # كده الأصغر بيتحط في مكانه الصح في أول الليست
+
+    return arr
+    # ترجعلنا ب ليست العنصر دي بعد الترتيب 
+
+
+numbers = [15, 25, 10, 24, 11]
+print("Array of numbers  is : ", numbers)
+# دي الليست الأصلية اللي عايزين نرتبها وبعدين اطبعها مع الجمله
+
+sorted_numbers = selection_sort(numbers)
+#ننادي علي الداله 
+
+print() #سطر فاضي
+
+print("Array after sorting is : ", sorted_numbers)
+#بنطبع الليست بعد الترتيب 
