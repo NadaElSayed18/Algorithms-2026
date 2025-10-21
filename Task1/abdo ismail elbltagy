@@ -1,0 +1,12 @@
+def selection_sort(arr):                     # تعريف دالة اسمها selection_sort بتاخد قائمة اسمها arr
+    n = len(arr)                             # n = عدد العناصر في القائمة arr
+    for i in range(n):                       #  بتمر على كل عنصر في القائمه
+        min_index = i                        # نفترض إن العنصر الحالي هو الأصغر
+        for j in range(i + 1, n):            #  داخلية بتمر على العناصر اللي بعد العنصر الحالي
+            if arr[j] < arr[min_index]:      # لو لقينا عنصر أصغر من العنصر الحالي
+                min_index = j                # نحدث min_index علشان يشير لمكان العنصر الأصغر
+        arr[i], arr[min_index] = arr[min_index], arr[i]   # نبدل العنصر الحالي بأصغر عنصر لقيناه
+
+numbers = [10, 21, 77, 63, 3]                # تعريف قائمة فيها مجموعة أرقام
+selection_sort(numbers)                      # استدعاء الدالة علشان ترتب القائمة
+print("Sorted list:", numbers)               # طباعة الarray بعد الترتيب
