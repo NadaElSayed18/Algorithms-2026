@@ -1,0 +1,35 @@
+arr = [3,15,6,8,9,77,33,0]
+#This is Unsorted arr
+for x in range (len(arr)):
+#for loop through all array’s indexes  
+    min=x
+#   Assume the current index x has the smallest value
+    for y in range (x+1,len(arr)):
+#Loop through the remaining unsorted part of the array        
+        if(arr[y] <  arr[min]):
+# If a smaller value is found update min   variable by putting the new small value        
+            min = y
+
+
+    temp = arr[x]
+    # Store the current value in a temporary variable
+    arr[x]= arr[min]
+    # Replace the current value with the smallest found value
+
+    arr[min] = temp  
+    # Put the stored value in the location of the smallest value
+
+
+
+print("sorted arr")
+print(arr)
+#print the sorted array
+
+
+
+
+
+
+
+
+
