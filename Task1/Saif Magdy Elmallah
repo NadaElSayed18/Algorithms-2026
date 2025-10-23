@@ -1,0 +1,20 @@
+# Task: Selection Sort
+def selection_sort(numbers):
+    length = len(numbers)  # بنحسب كام رقم عندنا في الليست
+    # بنمشي على كل رقم في الليست ما عدا آخر واحد
+    for i in range(length - 1):
+        smallest = i  # بنفترض إن الرقم اللي احنا واقفين عليه هو الأصغر
+        # بندور في اللي بعده نشوف فيه رقم أصغر ولا لأ
+        for j in range(i + 1, length):
+            if numbers[j] < numbers[smallest]:  # لو لقينا رقم أصغر
+                smallest = j  # بنخزن مكانه علشان نبدله بعدين
+        # بنبدّل بين الرقم اللي لقيناه الأصغر واللي في مكان i
+        temp = numbers[i]
+        numbers[i] = numbers[smallest]
+        numbers[smallest] = temp  # التبديل حصل خلاص
+
+# هنا بنجرب الكود
+data = [45, 12, 78, 3, 19, 5]
+print("Array before selection sort:", data)
+selection_sort(data)  # استدعاء دالة الترتيب
+print("Array after selection sort:", data)
