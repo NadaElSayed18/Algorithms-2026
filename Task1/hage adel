@@ -1,0 +1,68 @@
+// Hager Adel Ahmed (Sec-6)
+
+#include <bits/stdc++.h>  
+using namespace std;  
+
+// دالة بتطبع المصفوفة بشكل منسق وجميل
+void printArray(const vector<int> &arr, const string &message){
+    cout << message;   // بتطبع الرساله اللي بنبعتها قبل المصفوفه
+    cout << "[ ";
+    for (int i = 0; i < arr.size(); ++i){   // بتلف علي كل عنصر في المصفوفة
+        cout << arr[i];   // بتطبع العنصر الحالي
+        if (i < arr.size() - 1){   // لو لسه مش آخر عنصر
+            cout << ", ";   // اطبع فاصل كده بينهم
+        }
+    }
+    cout << " ]" << endl;   // تقفل المصفوفة وتقف سطر
+}
+
+// دالة السلكشن سورت
+void selectionSort(vector<int> &arr){
+
+    int n = arr.size();   // جبت عدد العناصر
+    int i, j, min_idx;    // متغيرات هنستخدمها في اللوب
+
+    for (i = 0; i < n - 1; i++){   // بلف علي كل عنصر ما عدا آخر واحد
+        min_idx = i;   // بفرض ان العنصر الحالي هو الأصغر
+        for (j = i + 1; j < n; j++){   // بلف علي العناصر اللي بعده
+            if (arr[j] < arr[min_idx]){   // لو لقيت رقم أصغر
+                min_idx = j;   // بخلي المؤشر يشاور عليه
+            }
+        }
+        // هنا عملت تبديل بين متغيرين بعمليه حسابيه  بسيطه بحب استخدمها
+        if (min_idx != i){
+            arr[i] += arr[min_idx];
+            arr[min_idx] = arr[i] - arr[min_idx];
+            arr[i] -= arr[min_idx];
+        }
+    }
+}
+// نهاية دالة السلكشن سورت
+
+int main(){
+    cout  << "============================================================\n"
+          << "           Welcome to Selection Sort Program            \n"
+          << "============================================================\n\n";
+    // رسالة ترحيب في بداية البرنامج
+
+    int n;   // متغير هيخزن عدد العناصر
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;   // المستخدم يدخل العدد
+
+    vector<int> arr(n);   // عملت مصفوفة بالحجم اللي المستخدم دخله
+
+    cout << "\nEnter " << n << " numbers separated by space: ";
+    for (int i = 0; i < n; i++){   // بقرأ كل رقم المستخدم يدخله
+        cin >> arr[i];
+    }
+
+    cout << "\n============================================================\n";
+    printArray(arr, "Original Array: ");   // بطبع المصفوفة قبل الترتيب
+
+    selectionSort(arr);   // بعمل ترتيب للمصفوفة
+
+    printArray(arr, "Sorted Array: ");   // بطبعها بعد الترتيب
+    cout << "============================================================\n\n";
+
+    return 0;   // نهاية البرنامج
+}
