@@ -1,0 +1,28 @@
+# Define a function named selection_sort that takes a list called arr
+def selection_sort(arr):
+    # Get the length of the list and store it in n
+    n = len(arr)
+    
+    # Loop through each element in the list except the last one
+    for i in range(n - 1):
+        # Assume the current position i has the smallest value
+        min_index = i
+        
+        # Loop through the remaining unsorted part of the list
+        for j in range(i + 1, n):
+            # If a smaller element is found, update min_index
+            if arr[j] < arr[min_index]:
+                min_index = j
+        
+        # Swap the smallest found element with the element at position i
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    
+    # Return the sorted list after all passes are complete
+    return arr
+
+
+# Example usage: create a list of unsorted numbers
+numbers = [64, 25, 12, 22, 11]
+
+# Call the selection_sort function and print the sorted list
+print(selection_sort(numbers))
