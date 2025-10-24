@@ -1,0 +1,11 @@
+def selection_sort(arr) داله بترتب العناصر
+n=len(arr) طول المصفوفه
+for i in range(n-1):  عداد علي كل العناصر
+min_index=i 
+for j in range(i+1,n):  هنقارن العناصر
+if arr[j]<arr[min_index]=arr[min_index],arr[i] نبدل الاماكن
+return arr نرجع المصفوفه
+numbers =[64,44,55,66,77,88] ارقام المصفوفه
+print("original list:"numbers) قبل الترتيب
+sorted_numbers=selection_sort(numbers)  الترتيب
+print("sorted list:"sorted_numbers) بعد الترتيب 
