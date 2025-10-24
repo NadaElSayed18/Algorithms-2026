@@ -1,0 +1,31 @@
+# نعرّف دالة تقوم بترتيب قائمة باستخدام خوارزمية الاختيار (Selection Sort)
+def selection_sort(arr):
+    # نحصل على طول القائمة
+    n = len(arr)
+    
+    # نمرّ على كل عنصر في القائمة
+    for i in range(n - 1):
+        # نفترض أن العنصر الحالي هو الأصغر
+        min_index = i
+        
+        # نبحث عن أصغر عنصر في الجزء غير المرتب من القائمة
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                # إذا وجدنا عنصرًا أصغر، نحدّث الفهرس الأدنى
+                min_index = j
+        
+        # بعد انتهاء الحلقة الداخلية، نبدّل بين العنصر الحالي والعنصر الأصغر
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    
+    # نرجع القائمة بعد ترتيبها
+    return arr
+
+
+# مثال على الاستخدام
+numbers = [64, 25, 12, 22, 11]
+print("قبل الترتيب:", numbers)
+
+# نستدعي الدالة لترتيب الأرقام
+sorted_numbers = selection_sort(numbers)
+
+print("بعد الترتيب:", sorted_numbers)
