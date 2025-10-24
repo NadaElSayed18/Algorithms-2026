@@ -1,0 +1,12 @@
+def select_sort(lst):                        # إنشاء دالة اسمها select_sort بتستقبل قائمة اسمها lst
+    size = len(lst)                          # نحسب عدد عناصر القائمة ونخزنهم في المتغير size
+    for i in range(size):                    # نبدأ حلقة تمر على كل عنصر في القائمة
+        smallest = i                         # نفترض مؤقتًا إن العنصر الحالي هو الأصغر
+        for j in range(i + 1, size):         # حلقة داخلية تمر على العناصر اللي بعد الحالي
+            if lst[j] < lst[smallest]:       # لو العنصر التالي أصغر من العنصر الحالي
+                smallest = j                 # نغير مؤشر الأصغر ليشير إلى هذا العنصر
+        lst[i], lst[smallest] = lst[smallest], lst[i]   # نبدل مكان العنصر الحالي بالأصغر اللي لقيناه
+
+nums = [8, 15, 42, 23, 5]                    # نعرف قائمة فيها شوية أرقام
+select_sort(nums)                            # نستدعي الدالة علشان ترتب الأرقام
+print("Sorted list:", nums)                  # print statement in English
