@@ -1,0 +1,21 @@
+def selection_sort(arr):
+    n = len(arr)  # بنجيب طول الليست
+
+    # بنمشي على كل عنصر في الليست
+    for i in range(n):
+        min_index = i   # نفترض إن العنصر الحالي هو أصغر عنصر
+
+        # نبدأ ندور على أصغر عنصر في الجزء اللي بعده
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:  # لو لقينا عنصر أصغر
+                min_index = j            # نحدّث مؤشر أصغر عنصر
+
+        # لو لقينا فعلاً أصغر من اللي عندنا نبدل
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+# مثال على التشغيل
+numbers = [64, 25, 12, 22, 11]
+
+print("Before Sorting:", numbers)
+selection_sort(numbers)
+print("After Sorting:", numbers)
