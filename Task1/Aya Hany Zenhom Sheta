@@ -1,0 +1,24 @@
+# Function to perform selection sort
+def selection_sort(arr):
+    # Loop through all array elements
+    for i in range(len(arr)):
+        # Assume the current index is the minimum
+        min_index = i
+
+        # Loop through the remaining unsorted elements
+        for j in range(i + 1, len(arr)):
+            # If a smaller element is found, update min_index
+            if arr[j] < arr[min_index]:
+                min_index = j
+
+        # Swap the found minimum element with the first unsorted element
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+
+    # Return the sorted array
+    return arr
+
+
+# Example usage
+numbers = [64, 25, 12, 22, 11]
+print("Original array:", numbers)
+print("Sorted array:", selection_sort(numbers))
